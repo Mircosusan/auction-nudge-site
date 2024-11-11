@@ -4,117 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auction Nudge Feed</title>
-
     <style>
-        /* Reset some default styles */
-        body, h1, p, div, a {
+        /* Global Reset and Modern Font */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Set a modern font and background */
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fb;
             color: #333;
-            line-height: 1.6;
-            padding: 20px;
-        }
-
-        /* Hide the header */
-        h1 {
-            display: none;
-        }
-
-        /* Style the container */
-        #auction-nudge-feed {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Modern card layout for items */
-        #auction-nudge-feed div {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            overflow: hidden;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding: 20px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        #auction-nudge-feed div:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Image styling */
-        #auction-nudge-feed img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-
-        /* Style the item details */
-        .item-details {
-            flex: 1;
-            margin-left: 20px;
-        }
-
-        /* Title and price styling */
-        .item-details h2 {
-            font-size: 1.4rem;
-            color: #008080;
+            padding: 0;
             margin: 0;
         }
 
-        .item-details p {
-            font-size: 1rem;
-            color: #555;
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 2.5rem;
+            color: #008080; /* Teal color */
         }
 
-        /* Style the 'Ad' and informational text */
-        div[style*="position:initial"] {
-            display: none;
+        /* Grid layout for auction items */
+        #auction-nudge-feed {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 20px;
         }
 
-        /* Style the links */
-        a {
-            text-decoration: none;
+        /* Style for each auction item */
+        .auction-item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .auction-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Image Styling */
+        .auction-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        /* Title Styling */
+        .auction-item h2 {
+            font-size: 1.2rem;
             color: #008080;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        /* Link Button Styling */
+        .auction-item a {
+            display: inline-block;
+            background-color: #008080;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .auction-item a:hover {
+            background-color: #006666;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1rem;
+            color: #777;
+            padding-bottom: 40px;
+        }
+
+        footer a {
+            color: #008080;
+            text-decoration: none;
             font-weight: bold;
         }
 
-        a:hover {
-            text-decoration: underline;
+        footer a:hover {
+            color: #006666;
         }
 
-        /* Responsiveness */
-        @media (max-width: 768px) {
-            #auction-nudge-feed div {
-                flex-direction: column;
-            }
-
-            .item-details {
-                margin-left: 0;
-            }
+        /* Hide unwanted "Ad" elements */
+        .auction-ad, .an-ebay-logo {
+            display: none !important;
         }
     </style>
 </head>
 <body>
-
-    <!-- This heading will be hidden -->
     <h1>My Auction Nudge Feed</h1>
     
     <div id="auction-nudge-feed">
-        <!-- Auction Nudge Feed Script -->
-        <script type="text/javascript" src="https://www.auctionnudge.com/feed/item/js/theme/columns/page/init/img_size/220/cats_output/dropdown/search_box/1/blank/1/lang/english/SellerID/__star____star__mirco__star____star__/siteid/0/MaxEntries/10/sortOrder/StartTimeNewest/target/08d9df259"></script>
-        <div id="auction-nudge-08d9df259"></div>
+       <!-- Auction Nudge Script -->
+       <script type="text/javascript" src="https://www.auctionnudge.com/feed/item/js/theme/columns/page/init/img_size/220/cats_output/dropdown/search_box/1/blank/1/lang/english/SellerID/__star____star__mirco__star____star__/siteid/0/MaxEntries/2/sortOrder/StartTimeNewest/target/54b361b90"></script>
+       <div id="auction-nudge-54b361b90"></div>
     </div>
 
+    <footer>
+        <p>Clicking an item will take you to eBay, who may pay a referral commission if a purchase is made. <a href="https://www.auctionnudge.com/about" target="_blank">Learn more</a></p>
+    </footer>
+    
+    <script>
+        // Hide unwanted elements if they are being dynamically added
+        window.onload = function() {
+            const adElements = document.querySelectorAll('.auction-ad, .an-ebay-logo');
+            adElements.forEach(el => el.style.display = 'none');
+        };
+    </script>
 </body>
 </html>
