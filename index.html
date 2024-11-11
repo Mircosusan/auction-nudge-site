@@ -6,23 +6,107 @@
     <title>Auction Nudge Feed</title>
 
     <style>
-        /* Hide the "My Auction Nudge Feed" heading */
+        /* Reset some default styles */
+        body, h1, p, div, a {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Set a modern font and background */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Hide the header */
         h1 {
             display: none;
         }
 
-        /* Hide the div with the inline styles */
+        /* Style the container */
+        #auction-nudge-feed {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Modern card layout for items */
+        #auction-nudge-feed div {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #auction-nudge-feed div:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Image styling */
+        #auction-nudge-feed img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        /* Style the item details */
+        .item-details {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        /* Title and price styling */
+        .item-details h2 {
+            font-size: 1.4rem;
+            color: #008080;
+            margin: 0;
+        }
+
+        .item-details p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Style the 'Ad' and informational text */
         div[style*="position:initial"] {
             display: none;
         }
 
-        /* Change the text color of all elements to teal */
-        body, h1, p, div, a, span, li, td {
-            color: #008080 !important; /* Teal color */
+        /* Style the links */
+        a {
+            text-decoration: none;
+            color: #008080;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            #auction-nudge-feed div {
+                flex-direction: column;
+            }
+
+            .item-details {
+                margin-left: 0;
+            }
         }
     </style>
 </head>
 <body>
+
     <!-- This heading will be hidden -->
     <h1>My Auction Nudge Feed</h1>
     
@@ -31,5 +115,6 @@
         <script type="text/javascript" src="https://www.auctionnudge.com/feed/item/js/theme/columns/page/init/img_size/220/cats_output/dropdown/search_box/1/blank/1/lang/english/SellerID/__star____star__mirco__star____star__/siteid/0/MaxEntries/10/sortOrder/StartTimeNewest/target/08d9df259"></script>
         <div id="auction-nudge-08d9df259"></div>
     </div>
+
 </body>
 </html>
